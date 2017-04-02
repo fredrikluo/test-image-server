@@ -1,4 +1,5 @@
 #include "app_data.h"
+#include <stddef.h>
 #include <fstream>
 
 const char app_data::MAGIC_HEADER[] = "APP_DATA";
@@ -27,6 +28,6 @@ void app_data::read_file(const char *filename, std::vector<char> &vec) {
   vec.reserve(fileSize);
 
   // read the data:
-  vec.insert(vec.begin(), std::istream_iterator<char>(file),
-             std::istream_iterator<char>());
+  vec.insert(vec.begin(), std::istreambuf_iterator<char>(file),
+             std::istreambuf_iterator<char>());
 }

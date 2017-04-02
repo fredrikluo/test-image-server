@@ -1,3 +1,5 @@
+#include <stddef.h>
+#include <cstring>
 #include "app_protocol.h"
 #include "util.h"
 
